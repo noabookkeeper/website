@@ -1,0 +1,13 @@
+---
+globs: src/app/**
+description: Next.js App Router patterns and expectations
+---
+
+- **File-based routing**: Each route segment is a folder. `layout.tsx` wraps children; `page.tsx` is the route's primary UI.
+  - Root layout: [src/app/layout.tsx](mdc:src/app/layout.tsx)
+  - Root page: [src/app/page.tsx](mdc:src/app/page.tsx)
+- **Server Components by default**: Use Client Components only when necessary. Add `"use client"` at the top of the file if you use hooks or event handlers.
+- **Metadata**: Prefer `export const metadata` over legacy `Head` components.
+- **Fonts and assets**: Use `next/font` in layout (see [src/app/layout.tsx](mdc:src/app/layout.tsx)) and `next/image` for images.
+- **Styling**: Use Tailwind classes and CSS variables defined in [src/app/globals.css](mdc:src/app/globals.css). Merge classes with `cn()`.
+- **Do not mix**: Avoid adding a `pages/` directory; stick to the App Router.

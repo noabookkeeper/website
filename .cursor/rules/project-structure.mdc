@@ -1,0 +1,21 @@
+---
+alwaysApply: true
+---
+
+- **App Router**: Next.js App Router is used. The entry directory is `src/app/`.
+  - Root layout: [src/app/layout.tsx](mdc:src/app/layout.tsx)
+  - Root page: [src/app/page.tsx](mdc:src/app/page.tsx)
+  - Global styles: [src/app/globals.css](mdc:src/app/globals.css)
+- **UI and Utilities**:
+  - Shared UI primitives live in `src/components/ui/` (e.g., [src/components/ui/button.tsx](mdc:src/components/ui/button.tsx))
+  - Shared utilities: [src/lib/utils.ts](mdc:src/lib/utils.ts)
+- **Path Aliases**: Configured in [tsconfig.json](mdc:tsconfig.json) with `@/* → ./src/*`.
+- **Styling**: Tailwind CSS v4 with `tw-animate-css` is configured via [src/app/globals.css](mdc:src/app/globals.css). Prettier uses `prettier-plugin-tailwindcss` and sorts classes based on that stylesheet.
+- **shadcn/ui**: Component generator/config is stored in [components.json](mdc:components.json). UI components use `class-variance-authority` and `cn()` helper.
+- **Tooling**:
+  - ESLint flat config: [eslint.config.mjs](mdc:eslint.config.mjs)
+  - Prettier config: [.prettierrc.mjs](mdc:.prettierrc.mjs)
+  - Next.js config: [next.config.ts](mdc:next.config.ts)
+- **Scripts** (see [package.json](mdc:package.json)):
+  - `pnpm dev` (Next 15 + Turbopack), `pnpm build`, `pnpm start`
+  - `pnpm lint`, `pnpm lint:fix`, `pnpm format`, `pnpm format:check`, `pnpm type-check`

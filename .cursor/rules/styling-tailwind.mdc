@@ -1,0 +1,11 @@
+---
+globs: src/**/*.tsx,src/**/*.css
+description: Tailwind CSS v4 usage, class ordering, CSS variables, and animation utilities
+---
+
+- **Tailwind v4**: Styles are imported via `@import "tailwindcss";` in [src/app/globals.css](mdc:src/app/globals.css). Animation utilities come from `tw-animate-css`.
+- **Design tokens**: Use CSS variables declared in `:root` and `.dark` (see [src/app/globals.css](mdc:src/app/globals.css)) for colors, radii, and charts.
+- **Class merging**: Use `cn()` from [src/lib/utils.ts](mdc:src/lib/utils.ts) to merge classes. Avoid manual deduplication.
+- **Class ordering**: Prettier with `prettier-plugin-tailwindcss` sorts classes based on [src/app/globals.css](mdc:src/app/globals.css) (configured in [.prettierrc.mjs](mdc:.prettierrc.mjs)).
+- **Icons and size utilities**: Prefer Tailwind `size-*` utilities for square sizing; keep icon-only buttons aligned with the `icon` size variant.
+- **Theming**: Use the `dark` custom variant (`@custom-variant dark (&:is(.dark *));`) for dark-mode styles when necessary.

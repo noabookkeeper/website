@@ -1,0 +1,11 @@
+---
+description: Linting, formatting, and scripts expectations for day-to-day work
+---
+
+- **Scripts** (see [package.json](mdc:package.json)):
+  - `pnpm dev` (Turbopack), `pnpm build`, `pnpm start`
+  - `pnpm lint`, `pnpm lint:fix`, `pnpm format`, `pnpm format:check`, `pnpm type-check`
+- **ESLint**: Flat config extends `next/core-web-vitals`, `next/typescript`, `prettier`. Ignore patterns live in [eslint.config.mjs](mdc:eslint.config.mjs).
+- **Prettier**: See [.prettierrc.mjs](mdc:.prettierrc.mjs). Uses `prettier-plugin-tailwindcss` with `tailwindStylesheet` pointing to [src/app/globals.css](mdc:src/app/globals.css). Formatting is authoritative.
+- **Type checking**: Run `pnpm type-check` locally before commits and CI.
+- **File ignores**: Respect [.prettierignore](mdc:.prettierignore) and ignores in ESLint config.

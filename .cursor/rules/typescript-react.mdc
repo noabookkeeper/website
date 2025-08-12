@@ -1,0 +1,19 @@
+---
+description: Conventions for TypeScript, React components, naming, imports, and className usage
+alwaysApply: false
+---
+
+- **TypeScript strictness**: `strict: true` is enabled. Exported functions/components and public APIs must have explicit type annotations. Avoid `any`.
+- **Imports**: Prefer `@/*` aliases configured in [tsconfig.json](mdc:tsconfig.json).
+- **React components**:
+  - App Router defaults to Server Components. Add `"use client"` only when using interactivity (state, refs, effects, event handlers).
+  - Co-locate component files under `src/components/**` and feature UI under `src/features/**` (when applicable).
+- **Props and variants**:
+  - For variant-based styling, use `cva` and type with `VariantProps<typeof yourVariants>`.
+  - Reuse `cn()` from [src/lib/utils.ts](mdc:src/lib/utils.ts) for `className` merging.
+- **Code style**:
+  - Use meaningful names; avoid 1–2 character identifiers.
+  - Prefer guard clauses and early returns over deep nesting.
+  - Handle errors explicitly; no empty catch blocks.
+  - Avoid inline comments; if needed, write short comments that explain "why", not "how".
+  - Follow Prettier formatting (semi-colons on, double quotes per config, width 80).

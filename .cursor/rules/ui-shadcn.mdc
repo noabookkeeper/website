@@ -1,0 +1,15 @@
+---
+alwaysApply: false
+description: shadcn/ui patterns using cva, VariantProps, Slot, and cn()
+---
+
+- **Component shape**: Export the component and its `*Variants` factory. Example: [src/components/ui/button.tsx](mdc:src/components/ui/button.tsx) exports `Button` and `buttonVariants`.
+- **Variants**: Define `variant` and `size` options via `cva`; default variants should be provided. Type props with `VariantProps<typeof ...>`.
+- **asChild**: Support `asChild` with Radix `Slot` for better composition (links, etc.).
+- **Accessibility and focus**: Keep `focus-visible` rings and `aria-invalid` styles. Include `data-slot` for targeting (e.g., `data-slot="button"`).
+- **Class merging**: Always compute classes via `cn(buttonVariants({ ... }))`.
+- **Icons**: Keep SVGs non-interactive and sized consistently (`[&_svg]:pointer-events-none` and default `size-4`). Use `lucide-react` icons by default.
+- **Adding new UI components**: Use the shadcn CLI via pnpm. Do not copy/paste.
+  - Example (single): `pnpm dlx shadcn@latest add button`
+  - Example (multiple): `pnpm dlx shadcn@latest add button input textarea`
+  - The generator reads [components.json](mdc:components.json) (RSC enabled, TSX, Tailwind path set to [src/app/globals.css](mdc:src/app/globals.css)).
