@@ -9,21 +9,21 @@ const steps = [
   },
   {
     icon: Calendar,
-    title: "Monthly Tasks",
+    title: "Proposal",
     description:
-      "Regular bookkeeping, reconciliations, and expense management on a fixed schedule.",
+      "We clarify our mission adapted to your needs.",
   },
   {
     icon: FileCheck,
-    title: "Close & Report",
+    title: "Reportings",
     description:
-      "Monthly financial reports delivered on time with insights and recommendations.",
+      "Montlhy/Quaterly or annual financial reports delivered on time with insight and recommandation",
   },
   {
     icon: TrendingUp,
     title: "Optimize",
     description:
-      "Ongoing advisory to improve cash flow, reduce costs, and plan for growth.",
+      "Plan for “your” growth",
   },
 ];
 
@@ -40,8 +40,8 @@ export function HowItWorks() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-6 mb-20">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">
-            Your path to{" "}
-            <span className="text-primary font-bold">financial clarity</span>
+            How do {" "}
+            <span className="text-primary font-bold">we operate</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             A refined, systematic approach that transforms your financial chaos

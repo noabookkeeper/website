@@ -21,7 +21,7 @@ export function Header() {
         <div className="flex items-center justify-between h-18">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-3xl font-bold text-primary">Noa Bookkeeper</h1>
+            <h1 className="text-3xl font-bold text-primary">FlowCycle</h1>
           </div>
 
           {/* Desktop Navigation */}
@@ -37,6 +37,12 @@ export function Header() {
               className="text-gray-700 hover:text-primary font-medium transition-colors"
             >
               How It Works
+            </button>
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-gray-700 hover:text-primary font-medium transition-colors"
+            >
+              About
             </button>
             <button
               onClick={() => scrollToSection("contact")}
@@ -71,6 +77,12 @@ export function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200">
             <div className="flex flex-col space-y-4">
+              <button
+                onClick={() => scrollToSection("about")}
+                className="text-left text-gray-700 hover:text-primary font-medium py-2"
+              >
+                About
+              </button>
               <button
                 onClick={() => scrollToSection("services")}
                 className="text-left text-gray-700 hover:text-primary font-medium py-2"

@@ -1,23 +1,14 @@
 import {
-  Calculator,
   FileText,
   CreditCard,
-  Users,
   BarChart3,
-  Building2,
   Home,
-  Hammer,
   Calendar,
-  TrendingUp,
   Sparkles,
+  Shield,
 } from "lucide-react";
 
 const services = [
-  {
-    icon: Calculator,
-    title: "Monthly Bookkeeping & Reconciliation",
-    description: "Your books, reconciled and ready—month after month.",
-  },
   {
     icon: FileText,
     title: "Catch-Up & Cleanup",
@@ -29,31 +20,14 @@ const services = [
     description: "Invoice out, pay bills on time, stay cash-flow positive.",
   },
   {
-    icon: Users,
-    title: "Payroll Management",
-    description: "Payslips and filings—handled.",
-  },
-  {
     icon: BarChart3,
     title: "Financial Reporting",
-    description: "See what matters—profit, runway, margins.",
-  },
-  {
-    icon: Building2,
-    title: "Property Management Accounting",
-    description:
-      "Rent rolls, owner statements, and expenses—accurately tracked.",
+    description: "See what matters—profit, tailored for your need.",
   },
   {
     icon: Home,
     title: "Landlords",
-    description: "Rental income, expenses, and tenant management simplified.",
-  },
-  {
-    icon: Hammer,
-    title: "House Flippers",
-    description:
-      "Track reno costs, profit margins, and timelines for every project.",
+    description: "Rental income and expense by property.",
   },
   {
     icon: Calendar,
@@ -61,16 +35,15 @@ const services = [
     description: "Audit-ready packs that save everyone time.",
   },
   {
-    icon: TrendingUp,
-    title: "CFO Advisory",
-    description: "Forecasts and strategy without a full-time hire.",
+    icon: Shield,
+    title: "Compliance & Tax preparation",
+    description: "1099 filing / tax return for businesses and individual",
   },
 ];
 
 export function ServicesOverview() {
   return (
     <section
-      id="services"
       className="py-20 lg:py-32 bg-secondary relative overflow-hidden"
     >
       {/* Background decoration */}

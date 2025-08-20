@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Noa Bookkeeper - Professional Accounting & Bookkeeping Services",
+  title: "FlowCycle Accounting - Professional Accounting & Bookkeeping Services",
   description:
     "Stress-free bookkeeping for growing businesses. Fixed-fee plans, dedicated accountants, real-time reporting. Specialized in property management, house flippers, and small business accounting.",
   keywords:

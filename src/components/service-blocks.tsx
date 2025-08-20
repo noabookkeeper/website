@@ -33,6 +33,7 @@ const serviceBlocks = [
       "Property expense tracking",
       "Owner distribution calculations",
       "Maintenance and repair categorization",
+      "Trust accounting, track income and expense by property",
       "1099 preparation for contractors",
     ],
     whatYouGet: [
@@ -83,6 +84,7 @@ const serviceBlocks = [
       "Budget planning and variance analysis",
       "KPI tracking and reporting",
       "Strategic planning support",
+      "Process implementation",
     ],
     whatYouGet: [
       "Data-driven business insights",
@@ -102,7 +104,9 @@ const serviceBlocks = [
 
 export function ServiceBlocks() {
   return (
-    <section className="py-16 lg:py-24 bg-secondary">
+    <section 
+      id="services"
+      className="py-16 lg:py-24 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">

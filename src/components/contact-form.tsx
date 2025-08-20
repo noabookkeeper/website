@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Sparkles } from "lucide-react";
+import { CheckCircle, Sparkles, Loader2 } from "lucide-react";
+import { submitContactForm, type ContactFormData } from "@/lib/actions";
 
 export function ContactForm() {
   const scrollToSection = (id: string) => {
@@ -18,18 +19,27 @@ export function ContactForm() {
     gdprConsent: false,
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isPending, startTransition] = useTransition();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Basic validation
-    if (!formData.email || !formData.gdprConsent) {
-      alert(
-        "Please fill in your email address and accept the privacy consent."
-      );
-      return;
-    }
-    console.log("Form submitted:", formData);
-    setIsSubmitted(true);
+    setError(null);
+
+    startTransition(async () => {
+      try {
+        const result = await submitContactForm(formData as ContactFormData);
+        
+        if (result.success) {
+          setIsSubmitted(true);
+        } else {
+          setError(result.error || "An error occurred. Please try again.");
+        }
+      } catch (error) {
+        console.error("Form submission error:", error);
+        setError("An unexpected error occurred. Please try again.");
+      }
+    });
   };
 
   if (isSubmitted) {
@@ -152,15 +162,32 @@ export function ContactForm() {
               </label>
             </div>
 
+            {/* Error Message */}
+            {error && (
+              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-red-600 text-sm">{error}</p>
+              </div>
+            )}
+
             {/* Submit Button */}
             <div className="text-center">
               <Button
                 type="submit"
                 size="lg"
-                className="gradient-prosperity hover:opacity-90 text-white px-12 py-6 text-xl font-semibold prosperity-shadow hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                disabled={isPending}
+                className="gradient-prosperity hover:opacity-90 text-white px-12 py-6 text-xl font-semibold prosperity-shadow hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
-                <Sparkles className="size-5 mr-2" />
-                Begin My Prosperity Journey
+                {isPending ? (
+                  <>
+                    <Loader2 className="size-5 mr-2 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Sparkles className="size-5 mr-2" />
+                    Begin My Prosperity Journey
+                  </>
+                )}
               </Button>
               <p className="text-sm text-gray-500 mt-4">
                 We&apos;ll respond within 24 hours with your custom quote
