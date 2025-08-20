@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Sparkles, Loader2 } from "lucide-react";
-import { submitContactForm, type ContactFormData } from "@/lib/actions";
+import type { ContactFormData } from "@/lib/actions";
 
 export function ContactForm() {
   const scrollToSection = (id: string) => {
@@ -13,33 +13,42 @@ export function ContactForm() {
     }
   };
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     email: "",
     message: "",
     gdprConsent: false,
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [isPending, startTransition] = useTransition();
+  const [isPending, setIsPending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+    setIsPending(true);
 
-    startTransition(async () => {
-      try {
-        const result = await submitContactForm(formData as ContactFormData);
-        
-        if (result.success) {
-          setIsSubmitted(true);
-        } else {
-          setError(result.error || "An error occurred. Please try again.");
-        }
-      } catch (error) {
-        console.error("Form submission error:", error);
-        setError("An unexpected error occurred. Please try again.");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        setIsSubmitted(true);
+      } else {
+        setError(result.error || "An error occurred. Please try again.");
       }
-    });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setError("An unexpected error occurred. Please try again.");
+    } finally {
+      setIsPending(false);
+    }
   };
 
   if (isSubmitted) {

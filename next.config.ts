@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Remove experimental server actions config as it's now stable in Next.js 15
 };
 
 export default nextConfig;
