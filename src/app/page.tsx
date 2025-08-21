@@ -4,7 +4,7 @@ import { About } from "../components/about";
 import { ServicesOverview } from "../components/services-overview";
 import { HowItWorks } from "../components/how-it-works";
 import { ServiceBlocks } from "../components/service-blocks";
-import { ContactForm } from "../components/contact-form";
+import { ContactForm } from "@/features/contact";
 import { Footer } from "../components/footer";
 
 export default function Home() {

@@ -1,9 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Sparkles, Loader2 } from "lucide-react";
-import type { ContactFormData } from "@/lib/actions";
+import { submitContactForm } from "./actions";
+
+interface ContactFormData {
+  email: string;
+  message: string;
+}
 
 export function ContactForm() {
   const scrollToSection = (id: string) => {
@@ -16,39 +21,29 @@ export function ContactForm() {
   const [formData, setFormData] = useState<ContactFormData>({
     email: "",
     message: "",
-    gdprConsent: false,
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [isPending, setIsPending] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
-    setIsPending(true);
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-      
-      if (result.success) {
-        setIsSubmitted(true);
-      } else {
-        setError(result.error || "An error occurred. Please try again.");
+    startTransition(async () => {
+      try {
+        const result = await submitContactForm(formData);
+        
+        if (result.success) {
+          setIsSubmitted(true);
+        } else {
+          setError(result.error || "An error occurred. Please try again.");
+        }
+      } catch (error) {
+        console.error("Form submission error:", error);
+        setError("An unexpected error occurred. Please try again.");
       }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      setError("An unexpected error occurred. Please try again.");
-    } finally {
-      setIsPending(false);
-    }
+    });
   };
 
   if (isSubmitted) {
@@ -148,29 +143,6 @@ export function ContactForm() {
               />
             </div>
 
-            {/* GDPR Consent */}
-            <div className="space-y-4">
-              <label className="flex items-start space-x-3 cursor-pointer">
-                <input
-                  type="checkbox"
-                  required
-                  checked={formData.gdprConsent}
-                  onChange={(e) =>
-                    setFormData((prev) => ({
-                      ...prev,
-                      gdprConsent: e.target.checked,
-                    }))
-                  }
-                  className="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary mt-1"
-                />
-                <span className="text-sm text-gray-700">
-                  I consent to having this website store my submitted
-                  information so they can respond to my inquiry. I understand
-                  that I can request the removal of my data at any time. *
-                </span>
-              </label>
-            </div>
-
             {/* Error Message */}
             {error && (
               <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
@@ -207,4 +179,4 @@ export function ContactForm() {
       </div>
     </section>
   );
-}
+} 
