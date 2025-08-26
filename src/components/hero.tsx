@@ -56,12 +56,7 @@ export function Hero() {
             {/* Enhanced typography */}
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 leading-tight max-w-5xl mx-auto">
               Elevate your{" "}
-              <span className="relative">
-                <span className="text-primary font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                  financial success
-                </span>
-                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary rounded-full opacity-60"></div>
-              </span>
+              <span className="text-primary font-bold">financial success</span>
             </h1>
 
             <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto font-medium">
@@ -92,18 +87,18 @@ export function Hero() {
                   />
                 </div>
 
-                {/* Enhanced floating elements with better positioning */}
-                <div className="absolute -top-8 -right-8 w-14 h-14 gradient-gold rounded-full flex items-center justify-center animate-bounce shadow-xl group-hover:scale-110 transition-transform duration-300">
-                  <Sparkles className="text-white size-7" />
+                {/* Enhanced floating elements with closer positioning for mobile */}
+                <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 lg:-top-8 lg:-right-8 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 gradient-gold rounded-full flex items-center justify-center animate-bounce shadow-xl group-hover:scale-110 transition-transform duration-300">
+                  <Sparkles className="text-white size-5 sm:size-6 lg:size-7" />
                 </div>
-                <div className="absolute -bottom-8 -left-8 w-14 h-14 gradient-green rounded-full flex items-center justify-center animate-bounce shadow-xl group-hover:scale-110 transition-transform duration-300 delay-500">
-                  <Shield className="text-white size-7" />
+                <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 lg:-bottom-8 lg:-left-8 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 gradient-green rounded-full flex items-center justify-center animate-bounce shadow-xl group-hover:scale-110 transition-transform duration-300 delay-500">
+                  <Shield className="text-white size-5 sm:size-6 lg:size-7" />
                 </div>
-                <div className="absolute top-1/2 -left-16 -translate-y-1/2 w-12 h-12 bg-accent rounded-full flex items-center justify-center animate-pulse shadow-xl group-hover:scale-110 transition-transform duration-300 delay-200">
-                  <CheckCircle className="text-white size-6" />
+                <div className="absolute top-1/2 -left-8 sm:-left-12 lg:-left-16 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-accent rounded-full flex items-center justify-center animate-pulse shadow-xl group-hover:scale-110 transition-transform duration-300 delay-200">
+                  <CheckCircle className="text-white size-4 sm:size-5 lg:size-6" />
                 </div>
-                <div className="absolute top-1/2 -right-16 -translate-y-1/2 w-12 h-12 bg-primary rounded-full flex items-center justify-center animate-pulse shadow-xl group-hover:scale-110 transition-transform duration-300 delay-700">
-                  <TrendingUp className="text-white size-6" />
+                <div className="absolute top-1/2 -right-8 sm:-right-12 lg:-right-16 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-primary rounded-full flex items-center justify-center animate-pulse shadow-xl group-hover:scale-110 transition-transform duration-300 delay-700">
+                  <TrendingUp className="text-white size-4 sm:size-5 lg:size-6" />
                 </div>
               </div>
             </div>
