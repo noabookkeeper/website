@@ -97,49 +97,49 @@ export function ContactForm() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Information */}
-          <div className="lg:col-span-1">
-            <div className="bg-gray-900 rounded-3xl p-8 text-white h-full">
+          <div className="lg:col-span-1 order-2 lg:order-1">
+            <div className="bg-gray-900 rounded-3xl p-6 lg:p-8 text-white h-full">
               <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="size-5 text-white" />
+              <div className="space-y-4 lg:space-y-6">
+                <div className="flex items-start gap-3 lg:gap-4">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="size-4 lg:size-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Phone</h4>
+                    <h4 className="font-semibold mb-1 text-sm lg:text-base">Phone</h4>
                     <a
                       href="tel:+19292419509"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base"
                     >
                       +1 (929) 241-9509
                     </a>
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail className="size-5 text-white" />
+                <div className="flex items-start gap-3 lg:gap-4">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <Mail className="size-4 lg:size-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Email</h4>
+                    <h4 className="font-semibold mb-1 text-sm lg:text-base">Email</h4>
                     <a
                       href="mailto:contact@flowcycleaccounting.com"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base break-all"
                     >
                       contact@flowcycleaccounting.com
                     </a>
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="size-5 text-white" />
+                <div className="flex items-start gap-3 lg:gap-4">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <MapPin className="size-4 lg:size-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Location</h4>
-                    <address className="text-gray-300 not-italic">
+                    <h4 className="font-semibold mb-1 text-sm lg:text-base">Location</h4>
+                    <address className="text-gray-300 not-italic text-sm lg:text-base">
                       Joshua Tree, California<br />
                       United States
                     </address>
@@ -147,8 +147,8 @@ export function ContactForm() {
                 </div>
               </div>
               
-              <div className="mt-8 pt-8 border-t border-gray-700">
-                <p className="text-gray-400 text-sm">
+              <div className="mt-6 lg:mt-8 pt-6 lg:pt-8 border-t border-gray-700">
+                <p className="text-gray-400 text-xs lg:text-sm">
                   We typically respond within 24 hours. For urgent matters, please call us directly.
                 </p>
               </div>
@@ -156,12 +156,12 @@ export function ContactForm() {
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-3xl p-8 lg:p-12 prosperity-shadow border border-accent/10 relative overflow-hidden">
+          <div className="lg:col-span-2 order-1 lg:order-2">
+            <div className="bg-white rounded-3xl p-6 lg:p-8 xl:p-12 prosperity-shadow border border-accent/10 relative overflow-hidden">
           {/* Background decoration */}
           <div className="absolute top-0 right-0 w-40 h-40 gradient-gold rounded-full opacity-5 blur-2xl"></div>
           <div className="absolute bottom-0 left-0 w-32 h-32 gradient-green rounded-full opacity-5 blur-xl"></div>
-          <form onSubmit={handleSubmit} className="space-y-8">
+          <form onSubmit={handleSubmit} className="space-y-6 lg:space-y-8">
             {/* Email Address */}
             <div className="space-y-2">
               <label
@@ -178,7 +178,7 @@ export function ContactForm() {
                 onChange={(e) =>
                   setFormData((prev) => ({ ...prev, email: e.target.value }))
                 }
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full px-3 lg:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base"
                 placeholder="your.email@example.com"
               />
             </div>
@@ -193,13 +193,13 @@ export function ContactForm() {
               </label>
               <textarea
                 id="message"
-                rows={6}
+                rows={4}
                 value={formData.message}
                 onChange={(e) =>
                   setFormData((prev) => ({ ...prev, message: e.target.value }))
                 }
                 placeholder="Tell us about your business, specific needs, or any questions you have..."
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full px-3 lg:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base"
               />
             </div>
 
@@ -216,21 +216,21 @@ export function ContactForm() {
                 type="submit"
                 size="lg"
                 disabled={isPending}
-                className="gradient-prosperity hover:opacity-90 text-white px-12 py-6 text-xl font-semibold prosperity-shadow hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="gradient-prosperity hover:opacity-90 text-white px-6 lg:px-12 py-4 lg:py-6 text-lg lg:text-xl font-semibold prosperity-shadow hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none w-full lg:w-auto"
               >
                 {isPending ? (
                   <>
-                    <Loader2 className="size-5 mr-2 animate-spin" />
+                    <Loader2 className="size-4 lg:size-5 mr-2 animate-spin" />
                     Sending...
                   </>
                 ) : (
                   <>
-                    <Sparkles className="size-5 mr-2" />
+                    <Sparkles className="size-4 lg:size-5 mr-2" />
                     Begin My Prosperity Journey
                   </>
                 )}
               </Button>
-              <p className="text-sm text-gray-500 mt-4">
+              <p className="text-xs lg:text-sm text-gray-500 mt-3 lg:mt-4">
                 We&apos;ll respond within 24 hours with your custom quote
               </p>
             </div>
