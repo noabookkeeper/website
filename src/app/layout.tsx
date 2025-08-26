@@ -9,11 +9,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "FlowCycle Accounting - Professional Accounting & Bookkeeping Services",
+  title: "FlowCycle Accounting - Professional Tax & Bookkeeping CPA Services",
   description:
-    "Stress-free bookkeeping for growing businesses. Fixed-fee plans, dedicated accountants, real-time reporting. Specialized in property management, house flippers, and small business accounting.",
+    "Professional CPA services for tax preparation, bookkeeping, and accounting. Expert tax planning, compliance, and financial management for businesses and individuals. Serving Joshua Tree, California.",
   keywords:
-    "accounting services for small business, outsourced bookkeeping, monthly bookkeeping, reconciliations, payroll services, financial reporting, cash flow forecasting, fractional CFO, year-end, audit prep",
+    "CPA services, tax preparation, professional bookkeeping, tax planning, business accounting, individual tax services, tax compliance, financial management, Joshua Tree CPA, California tax services",
 };
 
 export default function RootLayout({

@@ -111,22 +111,7 @@ export function Footer() {
                     How It Works
                   </button>
                 </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-white/80 hover:text-white transition-colors"
-                  >
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-white/80 hover:text-white transition-colors"
-                  >
-                    Terms of Service
-                  </a>
-                </li>
+
               </ul>
             </div>
 
@@ -137,29 +122,27 @@ export function Footer() {
                 <li className="flex items-center gap-3">
                   <Mail className="size-4 text-white/60" />
                   <a
-                    href="mailto:hello@noabookkeeper.com"
+                    href="mailto:contact@flowcycleaccounting.com"
                     className="text-white/80 hover:text-white transition-colors"
                   >
-                    hello@noabookkeeper.com
+                    contact@flowcycleaccounting.com
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="size-4 text-white/60" />
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+19292419509"
                     className="text-white/80 hover:text-white transition-colors"
                   >
-                    +1 (234) 567-890
+                    +1 (929) 241-9509
                   </a>
                 </li>
                 <li className="flex items-start gap-3">
                   <MapPin className="size-4 text-white/60 mt-1" />
                   <span className="text-white/80">
-                    123 Business Ave
+                    Joshua Tree, California
                     <br />
-                    Suite 100
-                    <br />
-                    City, State 12345
+                    United States
                   </span>
                 </li>
               </ul>
@@ -176,18 +159,6 @@ export function Footer() {
               © 2024 Noa Bookkeeper. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a
-                href="#"
-                className="text-white/80 hover:text-white transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-white/80 hover:text-white transition-colors"
-              >
-                Terms of Service
-              </a>
               <a
                 href="#"
                 className="text-white/80 hover:text-white transition-colors"

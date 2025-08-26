@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Sparkles, Loader2 } from "lucide-react";
+import { CheckCircle, Sparkles, Loader2, Mail, Phone, MapPin } from "lucide-react";
 import { submitContactForm } from "./actions";
 
 interface ContactFormData {
@@ -78,7 +78,7 @@ export function ContactForm() {
       id="contact"
       className="py-20 lg:py-32 bg-secondary relative overflow-hidden pattern-prosperity"
     >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-semibold">
             <Sparkles className="size-4" />
@@ -97,7 +97,67 @@ export function ContactForm() {
           </p>
         </div>
 
-        <div className="bg-white rounded-3xl p-8 lg:p-12 prosperity-shadow border border-accent/10 relative overflow-hidden">
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Contact Information */}
+          <div className="lg:col-span-1">
+            <div className="bg-gray-900 rounded-3xl p-8 text-white h-full">
+              <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="size-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Phone</h4>
+                    <a
+                      href="tel:+19292419509"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      +1 (929) 241-9509
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <Mail className="size-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Email</h4>
+                    <a
+                      href="mailto:contact@flowcycleaccounting.com"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      contact@flowcycleaccounting.com
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <MapPin className="size-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Location</h4>
+                    <address className="text-gray-300 not-italic">
+                      Joshua Tree, California<br />
+                      United States
+                    </address>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8 pt-8 border-t border-gray-700">
+                <p className="text-gray-400 text-sm">
+                  We typically respond within 24 hours. For urgent matters, please call us directly.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="lg:col-span-2">
+            <div className="bg-white rounded-3xl p-8 lg:p-12 prosperity-shadow border border-accent/10 relative overflow-hidden">
           {/* Background decoration */}
           <div className="absolute top-0 right-0 w-40 h-40 gradient-gold rounded-full opacity-5 blur-2xl"></div>
           <div className="absolute bottom-0 left-0 w-32 h-32 gradient-green rounded-full opacity-5 blur-xl"></div>
@@ -175,6 +235,8 @@ export function ContactForm() {
               </p>
             </div>
           </form>
+            </div>
+          </div>
         </div>
       </div>
     </section>

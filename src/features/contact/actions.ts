@@ -30,8 +30,9 @@ export async function submitContactForm(data: ContactFormData): Promise<SubmitRe
 
     // Send email using Resend
     const emailResult = await resend.emails.send({
-      from: `Acme <${env.EMAIL_FROM}>`,
+      from: env.EMAIL_FROM,
       to: [env.EMAIL_TO],
+      replyTo: data.email,
       subject: "New Contact Form Submission",
       html: `
         <h2>New Contact Form Submission</h2>
