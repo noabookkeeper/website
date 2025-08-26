@@ -10,7 +10,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-secondary-foreground text-white">
+    <footer className="bg-[#1e4d5c] text-white">
       {/* Main Footer */}
       <div className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -17,23 +16,13 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-accent/20 shadow-sm">
+    <header className="sticky top-0 z-50 bg-brand-beige/95 backdrop-blur-md border-b border-accent/20 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div className="flex items-center space-x-3">
-              <div className="relative w-12 h-12">
-                <Image
-                  src="/logo.jpeg"
-                  alt="FLOWCYCLE ACCOUNTING Logo"
-                  width={48}
-                  height={48}
-                  className="w-full h-full object-contain"
-                  priority
-                />
-              </div>
-              <div className="hidden sm:block">
+            <div className="flex items-center">
+              <div>
                 <h1 className="text-xl font-bold text-primary">FLOWCYCLE</h1>
                 <p className="text-xs text-gray-600 -mt-1">ACCOUNTING</p>
               </div>

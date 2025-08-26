@@ -46,20 +46,21 @@
   --radius: 0.625rem;
 
   /* Brand Colors - Prosperity Palette */
-  --brand-green: #1a5d3a;
-  --brand-green-light: #2d7049;
-  --brand-green-dark: #0f3d26;
-  --brand-gold: #d4af37;
-  --brand-gold-light: #e6c966;
-  --brand-gold-dark: #b8941f;
+  --brand-green: #1e4d5c;
+  --brand-green-light: #2a6b7a;
+  --brand-green-dark: #153a47;
+  --brand-gold: #ff8c42;
+  --brand-gold-light: #ffa366;
+  --brand-gold-dark: #e6731a;
   --brand-cream: #faf8f3;
   --brand-pearl: #f5f2eb;
+  --brand-beige: #f5f1e8;
 
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #1a5d3a;
+  --primary: #1e4d5c;
   --primary-foreground: #ffffff;
   --secondary: #faf8f3;
   --secondary-foreground: #0f3d26;
@@ -70,7 +71,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: #1a5d3a;
+  --ring: #1e4d5c;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -84,7 +85,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  --background: var(--brand-white);
+  --background: var(--brand-beige);
   --foreground: oklch(0.145 0 0);
 }
 
@@ -133,32 +134,36 @@
 
 @layer utilities {
   .gradient-prosperity {
-    background: linear-gradient(135deg, #1a5d3a 0%, #2d7049 50%, #d4af37 100%);
+    background: linear-gradient(135deg, #1e4d5c 0%, #2a6b7a 50%, #ff8c42 100%);
   }
 
   .gradient-gold {
-    background: linear-gradient(135deg, #d4af37 0%, #e6c966 50%, #b8941f 100%);
+    background: linear-gradient(135deg, #ff8c42 0%, #ffa366 50%, #e6731a 100%);
   }
 
   .gradient-green {
-    background: linear-gradient(135deg, #0f3d26 0%, #1a5d3a 50%, #2d7049 100%);
+    background: linear-gradient(135deg, #153a47 0%, #1e4d5c 50%, #2a6b7a 100%);
   }
 
   .prosperity-shadow {
-    box-shadow: 0 25px 50px -12px rgba(26, 93, 58, 0.15),
-      0 0 40px rgba(212, 175, 55, 0.08);
+    box-shadow: 0 25px 50px -12px rgba(30, 77, 92, 0.15),
+      0 0 40px rgba(255, 140, 66, 0.08);
   }
 
   .gold-glow {
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 30px rgba(255, 140, 66, 0.3);
   }
 
   .pattern-prosperity {
     background-image: radial-gradient(
       circle at 2px 2px,
-      rgba(212, 175, 55, 0.15) 1px,
+      rgba(255, 140, 66, 0.15) 1px,
       transparent 0
     );
     background-size: 40px 40px;
+  }
+
+  .bg-brand-beige {
+    background-color: var(--brand-beige);
   }
 }

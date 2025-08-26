@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, TrendingUp, Shield, Sparkles } from "lucide-react";
 
@@ -11,7 +12,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-white to-muted py-20 lg:py-28 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-brand-beige to-muted py-20 lg:py-28 overflow-hidden">
       {/* Background blur effects - Mobile optimized */}
       <div className="absolute top-16 left-4 w-24 h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 lg:top-20 lg:left-20 gradient-gold rounded-full opacity-60 blur-2xl"></div>
       <div className="absolute bottom-16 right-4 w-28 h-28 sm:w-36 sm:h-36 lg:w-56 lg:h-56 lg:bottom-24 lg:right-24 gradient-green rounded-full opacity-60 blur-2xl"></div>
@@ -41,29 +42,41 @@ export function Hero() {
             </p>
           </div>
 
-          {/* Central Visual Element */}
+          {/* Logo and Visual Element */}
           <div className="relative flex justify-center">
             <div className="relative">
-              {/* Main central icon */}
-              <div className="w-32 h-32 lg:w-40 lg:h-40 gradient-prosperity rounded-full flex items-center justify-center prosperity-shadow">
-                <TrendingUp
-                  className="text-white size-16 lg:size-20"
-                  strokeWidth={1.5}
-                />
+              {/* Main Logo */}
+              <div className="relative w-56 h-56 lg:w-72 lg:h-72 mx-auto mb-8">
+                {/* Glowing background effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-teal-600 rounded-full opacity-20 blur-3xl animate-pulse"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-300 to-teal-500 rounded-full opacity-10 blur-2xl animate-pulse delay-1000"></div>
+                
+                {/* Logo container */}
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <Image
+                    src="/logo.jpeg"
+                    alt="FLOWCYCLE ACCOUNTING Logo"
+                    width={250}
+                    height={250}
+                    className="w-full h-full object-contain drop-shadow-lg"
+                    priority
+                    quality={95}
+                  />
+                </div>
               </div>
 
-              {/* Orbiting elements */}
-              <div className="absolute -top-4 -right-4 w-10 h-10 gradient-gold rounded-full flex items-center justify-center animate-pulse">
-                <Sparkles className="text-white size-5" />
+              {/* Floating decorative elements */}
+              <div className="absolute -top-6 -right-6 w-12 h-12 gradient-gold rounded-full flex items-center justify-center animate-bounce shadow-lg">
+                <Sparkles className="text-white size-6" />
               </div>
-              <div className="absolute -bottom-4 -left-4 w-10 h-10 gradient-green rounded-full flex items-center justify-center animate-pulse">
-                <Shield className="text-white size-5" />
+              <div className="absolute -bottom-6 -left-6 w-12 h-12 gradient-green rounded-full flex items-center justify-center animate-bounce shadow-lg">
+                <Shield className="text-white size-6" />
               </div>
-              <div className="absolute top-1/2 -left-8 -translate-y-1/2 w-8 h-8 bg-accent rounded-full flex items-center justify-center animate-pulse">
-                <CheckCircle className="text-white size-4" />
+              <div className="absolute top-1/2 -left-12 -translate-y-1/2 w-10 h-10 bg-accent rounded-full flex items-center justify-center animate-pulse shadow-lg">
+                <CheckCircle className="text-white size-5" />
               </div>
-              <div className="absolute top-1/2 -right-8 -translate-y-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center animate-pulse">
-                <CheckCircle className="text-white size-4" />
+              <div className="absolute top-1/2 -right-12 -translate-y-1/2 w-10 h-10 bg-primary rounded-full flex items-center justify-center animate-pulse shadow-lg">
+                <CheckCircle className="text-white size-5" />
               </div>
             </div>
           </div>
