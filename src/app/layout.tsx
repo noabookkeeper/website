@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://flowcycleaccounting.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000"),
   title: "FlowCycle Accounting - Professional Tax & Bookkeeping CPA Services",
   description:
     "Professional CPA services for tax preparation, bookkeeping, and accounting. Expert tax planning, compliance, and financial management for businesses and individuals. Serving Joshua Tree, California.",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FlowCycle Accounting - Professional Tax & Bookkeeping CPA Services",
     description: "Professional CPA services for tax preparation, bookkeeping, and accounting. Expert tax planning, compliance, and financial management for businesses and individuals. Serving Joshua Tree, California.",
-    url: "https://flowcycleaccounting.com",
+    url: process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000",
     siteName: "FlowCycle Accounting",
     images: [
       {
