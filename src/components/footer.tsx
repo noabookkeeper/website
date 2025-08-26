@@ -17,7 +17,7 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold">Noa Bookkeeper</h3>
+              <h3 className="text-2xl font-bold">Flowcycle Accounting</h3>
               <p className="text-white/80 leading-relaxed">
                 Professional accounting and bookkeeping services for growing
                 businesses. Accurate, reliable, and always on time.

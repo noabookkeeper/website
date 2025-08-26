@@ -9,11 +9,35 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://flowcycleaccounting.com"),
   title: "FlowCycle Accounting - Professional Tax & Bookkeeping CPA Services",
   description:
     "Professional CPA services for tax preparation, bookkeeping, and accounting. Expert tax planning, compliance, and financial management for businesses and individuals. Serving Joshua Tree, California.",
   keywords:
     "CPA services, tax preparation, professional bookkeeping, tax planning, business accounting, individual tax services, tax compliance, financial management, Joshua Tree CPA, California tax services",
+  openGraph: {
+    title: "FlowCycle Accounting - Professional Tax & Bookkeeping CPA Services",
+    description: "Professional CPA services for tax preparation, bookkeeping, and accounting. Expert tax planning, compliance, and financial management for businesses and individuals. Serving Joshua Tree, California.",
+    url: "https://flowcycleaccounting.com",
+    siteName: "FlowCycle Accounting",
+    images: [
+      {
+        url: "/logo.png",
+        width: 500,
+        height: 500,
+        alt: "FlowCycle Accounting Logo - Professional Financial Services",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FlowCycle Accounting - Professional Tax & Bookkeeping CPA Services",
+    description: "Professional CPA services for tax preparation, bookkeeping, and accounting. Expert tax planning, compliance, and financial management for businesses and individuals. Serving Joshua Tree, California.",
+    images: ["/logo.png"],
+    creator: "@flowcycleaccounting",
+    site: "@flowcycleaccounting",
+  },
 };
 
 export default function RootLayout({

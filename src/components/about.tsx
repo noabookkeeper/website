@@ -25,11 +25,11 @@ export function About() {
               
               
               <Image
-                src="/noa-picture.jpeg"
+                src="/noa-picture.jpg"
                 alt="Noa El Baz Bismuth, CPA"
-                className="object-cover"
-                width={1000}
-                height={1000}
+                className="object-cover w-full h-full"
+                width={500}
+                height={500}
                 priority
               />
               
