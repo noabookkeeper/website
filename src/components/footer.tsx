@@ -17,7 +17,7 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold">Flowcycle Accounting</h3>
+              <h3 className="text-2xl font-bold">Bismuth CPA</h3>
               <p className="text-white/80 leading-relaxed">
                 Professional accounting and bookkeeping services for growing
                 businesses. Accurate, reliable, and always on time.
@@ -122,10 +122,10 @@ export function Footer() {
                 <li className="flex items-center gap-3">
                   <Mail className="size-4 text-white/60" />
                   <a
-                    href="mailto:contact@flowcycleaccounting.com"
+                    href="mailto:contact@bismuthcpa.com"
                     className="text-white/80 hover:text-white transition-colors"
                   >
-                    contact@flowcycleaccounting.com
+                    contact@bismuthcpa.com
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
@@ -156,7 +156,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-white/80 text-sm">
-              © 2025 Flowcycle Accounting. All rights reserved.
+              © 2025 Bismuth CPA. All rights reserved.
             </div>
           </div>
         </div>

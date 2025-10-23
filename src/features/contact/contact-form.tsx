@@ -125,10 +125,10 @@ export function ContactForm() {
                   <div>
                     <h4 className="font-semibold mb-1 text-sm lg:text-base">Email</h4>
                     <a
-                      href="mailto:contact@flowcycleaccounting.com"
+                      href="mailto:contact@bismuthcpa.com"
                       className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base break-all"
                     >
-                      contact@flowcycleaccounting.com
+                      contact@bismuthcpa.com
                     </a>
                   </div>
                 </div>
