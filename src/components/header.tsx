@@ -26,7 +26,7 @@ export function Header() {
               <div className="relative w-14 h-14 md:w-20 md:h-20">
                 <Image
                   src="/logo.png"
-                  alt="FLOWCYCLE ACCOUNTING Logo"
+                  alt="BISMUTH CPA Logo"
                   width={500}
                   height={500}
                   className="w-full h-full object-contain"
@@ -34,8 +34,8 @@ export function Header() {
                 />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-primary">FLOWCYCLE</h1>
-                <p className="text-xs text-gray-600 -mt-1">ACCOUNTING</p>
+                <h1 className="text-xl font-bold text-primary">BISMUTH</h1>
+                <p className="text-xs text-gray-600 -mt-1">CPA</p>
               </div>
             </div>
           </div>
